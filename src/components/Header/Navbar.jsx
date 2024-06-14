@@ -13,7 +13,6 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const [issetTheme, setIssetTheme] = useState(false);
-  const [issetMenu, setIssetMenu] = useState(false);
   const { theme, setTheme } = useTheme();
   const authStatus = useSelector((state) => state.auth.status);
 
@@ -66,25 +65,11 @@ const Navbar = () => {
     }
   }, [issetTheme]);
 
-  useEffect(() => {
-    if (issetMenu) {
-      setTimeout(() => {
-        setIsMenuOpen(!isMenuOpen);
-        setIsAnimating(false);
-      }, 1500); // Match the animation duration
-      setIssetMenu(false);
-    }
-  }, [issetMenu]);
-
-
   const toggleTheme = () => {
     setIssetTheme(true);
     setIsAnimating(true);
   };
-  const toggleMenu=()=>{
-    setIssetMenu(true);
-    setIsAnimating(true);
-  }
+
 
   return (
     <nav className="w-full z-20 top-0 start-0 border-b" transition-style={isAnimating ? "out:wipe:bottom-left" : ""}>
@@ -131,7 +116,7 @@ const Navbar = () => {
           </button>
         </div>
         <div
-          className={`items-center justify-between transition-all duration-700 ${
+          className={`transition-all duration-500 ease-in-out items-center justify-between  ${
             isMenuOpen ? "flex" : "hidden"
           } w-full md:flex md:w-auto md:order-1  `}
           id="navbar-sticky"

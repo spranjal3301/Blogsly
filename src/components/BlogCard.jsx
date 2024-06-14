@@ -4,8 +4,9 @@ import { TracingBeam } from "./ui/tracing-beam";
 import parse from "html-react-parser";
 import { Link } from "react-router-dom";
 import dbService from "@/appwrite/db";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
+// import { Blurhash } from "react-blurhash";
+// import { LazyLoadImage } from 'react-lazy-load-image-component';
+// import 'react-lazy-load-image-component/src/effects/blur.css';
 
 
 
@@ -14,43 +15,7 @@ function BlogCard({ posts = [] }) {
     <TracingBeam className="px-6">
       <div className="max-w-2xl mx-auto antialiased pt-4 ">
 
-        {posts.map(({ $id, title, featureImage, content }) => (
-          
-
-          <Link key={$id} to={`/post/${$id}`}>
-            <div className="mb-10">
-              <h2 className="bg-black text-white rounded-full text-sm w-fit px-4 py-1 mb-4">
-                {'Blog'}
-              </h2>
-
-              <p className={twMerge("text-xl mb-4")}>{title}</p>
-
-              <div className="text-sm  prose prose-sm dark:prose-invert">
-                {featureImage && (
-                  // <div className="">
-                  <img
-                    loading="lazy"
-                    src={dbService.getFilePreview(featureImage)}
-                    alt={title}
-                    height="auto"
-                    width="1000"
-                    effect="blur"
-                    className="rounded-lg max-h-96 mb-10 object-cover cursor-pointer transition-all duration-500 ease-in hover:scale-105"
-                  />
-                  // </div>
-                )}
-                {content.length>600?(
-                   <span className="flex align-center font-bold text-blue-300 animate-bounce">Read...</span>
-                ):parse(content)}
-               
-                
-              </div>
-            </div>
-          </Link>
-
-        ))}
-
-        {posts.length < 3
+      {posts.length < 9
           ? dummyContent.map((item, index) => (
               <div key={`content-${index}`} className="mb-10">
                 <h2 className="bg-black text-white rounded-full text-sm w-fit px-4 py-1 mb-4">
@@ -74,6 +39,44 @@ function BlogCard({ posts = [] }) {
               </div>
             ))
           : ""}
+
+        {posts.map(({ $id, title, featureImage, content }) => (
+          
+
+          <Link key={$id} to={`/post/${$id}`}>
+            <div className="mb-10">
+              <h2 className="bg-black text-white rounded-full text-sm w-fit px-4 py-1 mb-4">
+                {'Blog'}
+              </h2>
+
+              <p className={twMerge("text-xl mb-4")}>{title}</p>
+
+              <div className="text-sm  prose prose-sm dark:prose-invert">
+                {featureImage && (
+                  // <div className="">
+                  <img
+                    loading="lazy"
+                    src={dbService.getFilePreview(featureImage)}
+                    alt={title}
+                    height="1000"
+                    width="1000"
+                    effect="blur"
+                    className="rounded-lg max-h-96 mb-10 object-cover cursor-pointer transition-all duration-500 ease-in hover:scale-105"
+                  />
+                  // </div>
+                )}
+                {content.length>600?(
+                   <span className="flex align-center font-bold text-blue-300 animate-bounce">Read...</span>
+                ):parse(content)}
+               
+                
+              </div>
+            </div>
+          </Link>
+
+        ))}
+
+        
       </div>
     </TracingBeam>
   );
