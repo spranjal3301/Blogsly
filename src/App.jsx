@@ -6,6 +6,7 @@ import { Footer, Header, Loader} from "./components";
 import { Outlet } from "react-router-dom";
 import { Toaster } from "@/components/ui/toaster"
 import { useToast } from "./components/ui/use-toast";
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 
 
@@ -50,6 +51,7 @@ function App() {
          
 
           <Footer />
+        <SpeedInsights />
         </div>
       </div>
   );

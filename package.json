@@ -20,6 +20,7 @@
     "@tsparticles/engine": "^3.4.0",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.4.0",
+    "@vercel/speed-insights": "^1.0.12",
     "appwrite": "^15.0.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
