@@ -13,7 +13,7 @@ import { CardBody, CardContainer, CardItem } from "../components/ui/3d-card";
 
 function Signup() {
   return (
-    <CardContainer className="inter-var ">
+    <CardContainer className="inter-var py-10 px-2">
       <CardBody className=" relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1]  dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
         <CardHeader>
           <CardItem
@@ -38,7 +38,7 @@ function Signup() {
           </CardContent>
         </CardItem>
 
-        <div className="flex justify-between items-center mt-20">
+        <div className="flex justify-between items-center">
           <CardFooter>
             <p>
               Already have an account? <Link to={"/signin"}>Login</Link>

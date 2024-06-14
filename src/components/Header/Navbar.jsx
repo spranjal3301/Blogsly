@@ -128,10 +128,11 @@ const Navbar = () => {
                   <li key={idx}>
                     <NavLink
                       to={items.path}
-                      className={({ isActive }) =>
-                        `block py-2 px-3 md:p-0 hover-link md:${
-                          isActive ? "active-hover-link" : "hover-link"
-                        }`
+                      className={
+                        ({ isActive }) =>(
+                        `block py-2 px-3 md:p-0  ${
+                          isActive ? "md:active-hover-link" : "md:hover-link"
+                        }`)
                       }
                     >
                       {items.name}
