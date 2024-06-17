@@ -85,7 +85,7 @@ function Post() {
       </div>
       <div className="md:w-2/3 ">
         <h1 className="text-4xl  font-bold mt-4 ">{post.title}</h1>
-        <div className="text-base text-wrap mt-4">{parse(post.content)}</div>
+        <div className="text-base text-wrap mt-4 browser-css">{parse(post.content)}</div>
 
         {isAuthor && (
       <div className="flex gap-5 justify-end py-4">

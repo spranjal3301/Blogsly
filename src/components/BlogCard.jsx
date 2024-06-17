@@ -67,7 +67,7 @@ function BlogCard({ posts = [] }) {
                 )}
                 {content.length>600?(
                    <span className="flex align-center font-bold text-blue-300 animate-bounce">Read...</span>
-                ):parse(content)}
+                ):(<div className="browser-css">{parse(content)}</div>)}
                
                 
               </div>
@@ -84,31 +84,21 @@ function BlogCard({ posts = [] }) {
 
 const dummyContent = [
   {
-    title: "Lorem Ipsum Dolor Sit Amet",
+    title: "Responsive design",
     description: (
       <>
         <p>
-          Sit duis est minim proident non nisi velit non consectetur. Esse
-          adipisicing laboris consectetur enim ipsum reprehenderit eu deserunt
-          Lorem ut aliqua anim do. Duis cupidatat qui irure cupidatat incididunt
-          incididunt enim magna id est qui sunt fugiat. Laboris do duis pariatur
-          fugiat Lorem aute sit ullamco. Qui deserunt non reprehenderit dolore
-          nisi velit exercitation Lorem qui do enim culpa. Aliqua eiusmod in
-          occaecat reprehenderit laborum nostrud fugiat voluptate do Lorem culpa
-          officia sint labore. Tempor consectetur excepteur ut fugiat veniam
-          commodo et labore dolore commodo pariatur.
+        This is a deep-dive into the role of development in the design process, with a focus on responsive design. It’s aimed at design leaders/managers and developers working with design teams, and visual designers looking to become better web designers. I’ll attempt to lay out the problems, and suggest practical solutions. I hope it helps. 🙂
         </p>
         <p>
-          Dolor minim irure ut Lorem proident. Ipsum do pariatur est ad ad
-          veniam in commodo id reprehenderit adipisicing. Proident duis
-          exercitation ad quis ex cupidatat cupidatat occaecat adipisicing.
+        Responsive design has been a thing for roughly 8-9 years now. In the early days, it was downright impressive to see a responsive website! Almost, a ‘dark art’ of web design. But, that was a long time ago.
+
+
         </p>
         <p>
-          Tempor quis dolor veniam quis dolor. Sit reprehenderit eiusmod
-          reprehenderit deserunt amet laborum consequat adipisicing officia qui
-          irure id sint adipisicing. Adipisicing fugiat aliqua nulla nostrud.
-          Amet culpa officia aliquip deserunt veniam deserunt officia
-          adipisicing aliquip proident officia sunt.
+        But, much of my freelance web development work involves ‘making things responsive’. Designers ask me to build them a website, then send me a mockup of a desktop-only…
+
+
         </p>
       </>
     ),
@@ -117,22 +107,18 @@ const dummyContent = [
       "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    title: "Lorem Ipsum Dolor Sit Amet",
+    title: "React Design Patterns",
     description: (
       <>
         <p>
-          Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat
-          deserunt cupidatat aute. Enim cillum dolor et nulla sunt exercitation
-          non voluptate qui aliquip esse tempor. Ullamco ut sunt consectetur
-          sint qui qui do do qui do. Labore laborum culpa magna reprehenderit ea
-          velit id esse adipisicing deserunt amet dolore. Ipsum occaecat veniam
-          commodo proident aliqua id ad deserunt dolor aliquip duis veniam sunt.
+        In the world of frontend development with React, the application of design patterns has become an essential practice. These patterns have evolved in line with the specific needs of React, offering elegant solutions to the recurring challenges developers face when designing robust components and applications.
+
+
         </p>
         <p>
-          In dolore veniam excepteur eu est et sunt velit. Ipsum sint esse
-          veniam fugiat esse qui sint ad sunt reprehenderit do qui proident
-          reprehenderit. Laborum exercitation aliqua reprehenderit ea sint
-          cillum ut mollit.
+        The fundamental purpose of these patterns is to address concrete problems in component development by simplifying the management of state, logic and element composition. By providing predefined structures and proven methodologies, design patterns in React promote consistency, modularity and scalability in the code base.
+
+
         </p>
       </>
     ),
@@ -141,16 +127,11 @@ const dummyContent = [
       "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    title: "Lorem Ipsum Dolor Sit Amet",
+    title: "Advanced JavaScript",
     description: (
       <>
         <p>
-          Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat
-          deserunt cupidatat aute. Enim cillum dolor et nulla sunt exercitation
-          non voluptate qui aliquip esse tempor. Ullamco ut sunt consectetur
-          sint qui qui do do qui do. Labore laborum culpa magna reprehenderit ea
-          velit id esse adipisicing deserunt amet dolore. Ipsum occaecat veniam
-          commodo proident aliqua id ad deserunt dolor aliquip duis veniam sunt.
+        Description: Uncover the intricacies of advanced JavaScript concepts, from nested function scopes and closures to currying, ‘this’ keyword dynamics, prototypes, and modern class-based programming. Elevate your skills with practical examples and a deep dive into iterables and iterators, creating a comprehensive guide for JavaScript developers seeking mastery.
         </p>
       </>
     ),
